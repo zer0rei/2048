@@ -1,0 +1,71 @@
+body {
+	background-color: #C7B6CB;
+	font-family: 'Oxygen', sans-serif;
+}
+
+#game {
+	width: 35em;
+	margin: 3% auto;
+}
+
+#board {
+	width: 100%;
+	height: 35em;
+	margin: 0 auto;
+	background-color: #1E253D;
+	border-radius: 3%;
+	position: relative;
+}
+
+#cells {
+	width: 96%;
+	height: 96%;
+	position: relative;
+	top: 2%;
+	left: 2%;
+}
+
+.cell {
+	width: 23%;
+	height: 23%;
+	margin: 1%;
+	background-color: #374364;
+	border-radius: 3%;
+	position: relative;
+	float: left;
+}
+
+#message-box {
+	width: 100%;
+	height: 1em;
+	text-align: center;
+}
+
+#menu {
+	width: 100%;
+	height: 5em;
+	margin-top: 1em;
+	text-align: center;
+	font-weight: bold;
+}
+
+#title {
+	font-size: 4em;
+	color: #1E253D;
+}
+
+#credit {
+	font-size: 0.2em;
+	position: relative;
+	top: -0.75em;
+}
+
+#credit a {
+	text-decoration: none;
+	color: #374364;
+	opacity: 0.4;
+}
+
+#credit a:hover {
+	opacity: 1.0;
+}
