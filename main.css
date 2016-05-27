@@ -5,7 +5,8 @@ body {
 
 #game {
 	width: 35em;
-	margin: 3% auto;
+	margin: 0 auto;
+	padding-top: 2%;
 }
 
 #board {
@@ -17,15 +18,19 @@ body {
 	position: relative;
 }
 
-#cells {
+#tiles {
 	width: 96%;
 	height: 96%;
+	font-size: 4em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
 	position: relative;
 	top: 2%;
 	left: 2%;
 }
 
-.cell {
+.tile {
 	width: 23%;
 	height: 23%;
 	margin: 1%;
@@ -35,15 +40,25 @@ body {
 	float: left;
 }
 
+.tile span {
+	position: relative;
+	top: 15%;
+}
+
+.tile .small-text {
+	font-size: 0.75em;
+	top: 12%;
+}
+
 #message-box {
 	width: 100%;
 	height: 1em;
 	text-align: center;
+	color: #374364;
 }
 
 #menu {
 	width: 100%;
-	height: 5em;
 	margin-top: 1em;
 	text-align: center;
 	font-weight: bold;
@@ -68,4 +83,36 @@ body {
 
 #credit a:hover {
 	opacity: 1.0;
+}
+
+@media screen and (max-width: 767px), screen and (max-height: 767px) {
+	#game {
+		width: 25em;
+	}
+
+	#board {
+		height: 25em;
+	}
+
+	#tiles {
+		font-size: 2.8em;
+	}
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 600px) {
+	#game {
+		width: 18em;
+	}
+
+	#board {
+		height: 18em;
+	}
+
+	#tiles {
+		font-size: 2em;
+	}
+
+	#title {
+		font-size: 3em;
+	}
 }
