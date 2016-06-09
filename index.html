@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>2048</title>
-	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" href="main.css">
 	<script src="main.js"></script>
 </head>
@@ -28,12 +29,23 @@
 				<div id="tile15" class="tile"></div>
 				<div id="tile16" class="tile"></div>
 			</div>
+			<div id="result-box">
+				<div id="result-background"></div>
+				<div id="result-message"></div>
+				<div id="result-tile-container">
+					<div id="result-tile"></div>
+				</div>
+				<button id="keep-going-button">Keep Going</button>
+				<button id="try-again-button">Try Again</button>
+			</div>
 		</div>
 		<div id="message-box"></div>
 		<div id="menu">
+			<i id="restart" class="fa fa-refresh" aria-hidden="true"></i>
 			<div id="title">2048<sub id="credit">
 				<a href="https://www.github.com/zer0rei" target="_blank">HE</a>
 			</sub></div>
+			<i id="simulate" class="fa fa-laptop" aria-hidden="true"></i>
 		</div>
 	</div>
 </body>
