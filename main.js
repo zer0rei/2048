@@ -1,3 +1,4 @@
+// Allowed keyboard keys
 var keyCodes = {
 	37: "left",
 	38: "up",
@@ -10,6 +11,8 @@ var keyCodes = {
 	74: "down"
 };
 
+// 2048 GAME CLASS //
+// // // // // // //
 function Game(display, rows, cols) {
 	this.rows = rows || 4;
 	this.cols = cols || 4;
@@ -204,6 +207,8 @@ Game.prototype.checkResult = function() {
 	}
 };
 
+// DOM DISPLAY  //
+// // // // // //
 function DOMDisplay() {
 	this.tiles = document.querySelectorAll(".tile");
 	this.resultBox = document.querySelector("#result-box");
@@ -379,6 +384,8 @@ DOMDisplay.prototype.result = function(state, score) {
 
 };
 
+// DOCUMENT READY  //
+// // // // // // //
 window.onload = function() {
 
 	// Resize
