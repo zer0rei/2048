@@ -4,15 +4,16 @@ body {
 }
 
 #game {
-	width: 35em;
+	width: 8.75em;
 	margin: 0 auto;
+	font-size: 4em;
 	font-weight: bold;
 	padding-top: 2%;
 }
 
 #board {
 	width: 100%;
-	height: 35em;
+	height: 8.75em;
 	margin: 0 auto;
 	background-color: #1E253D;
 	border-radius: 3%;
@@ -23,6 +24,7 @@ body {
 	width: 100%;
 	height: 100%;
 	color: white;
+	font-size: 1em;
 	display: none;
 	z-index: 2;
 	position: absolute;
@@ -40,7 +42,7 @@ body {
 #result-message {
 	width: 80%;
 	height: 15%;
-	font-size: 4em;
+	font-size: 1em;
 	text-align: center;
 	position: absolute;
 	top: 20%;
@@ -60,7 +62,7 @@ body {
 	width: 23%;
 	height: 100%;
 	border: solid 0.1em white;
-	font-size: 4em;
+	font-size: 1em;
 	display: inline-block;
 }
 
@@ -68,7 +70,7 @@ body {
 	width: 30%;
 	height: 8%;
 	border: none;
-	font-size: 1.5em;
+	font-size: 0.4em;
 	color: white;
 	background-color: #1E253D;
 	opacity: 0.8;
@@ -86,7 +88,7 @@ body {
 #tiles {
 	width: 96%;
 	height: 96%;
-	font-size: 4em;
+	font-size: 1em;
 	text-align: center;
 	color: white;
 	position: relative;
@@ -126,14 +128,14 @@ body {
 	width: 100%;
 	height: 1em;
 	margin-top: 0.2em;
-	font-size: 1.2em;
+	font-size: 0.3em;
 	text-align: center;
 	color: #374364;
 }
 
 #menu {
 	width: 100%;
-	font-size: 4em;
+	font-size: 1em;
 	text-align: center;
 	color: #1E253D;
 	margin-top: 0.2em;
@@ -178,45 +180,4 @@ body {
 
 #credit a:hover {
 	opacity: 1.0;
-}
-
-@media screen and (max-width: 767px), screen and (max-height: 767px) {
-	#game {
-		width: 25em;
-	}
-
-	#board {
-		height: 25em;
-	}
-
-	#tiles {
-		font-size: 3em;
-	}
-
-	#menu {
-		font-size: 2.8em;
-	}
-
-}
-
-@media screen and (max-width: 480px), screen and (max-height: 600px) {
-	#game {
-		width: 18em;
-	}
-
-	#board {
-		height: 18em;
-	}
-
-	#tiles {
-		font-size: 2.1em;
-	}
-
-	#menu {
-		font-size: 2.3em;
-	}
-
-	#message-box {
-		font-size: 1em;
-	}
 }
