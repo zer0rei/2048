@@ -181,3 +181,15 @@ body {
 #credit a:hover {
 	opacity: 1.0;
 }
+
+@media screen and (max-height: 768px) and (orientation: landscape) {
+	#game {
+		font-size: 3em;
+	}
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+	#game {
+		font-size: 2em;
+	}
+}

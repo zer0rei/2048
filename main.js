@@ -402,15 +402,14 @@ window.onload = function() {
 
 	// Game Logic
 	// // // // //
-
 	var myGame = new Game(new DOMDisplay());
 	myGame.start();
 
 	// "How to play" message
 	var messageDisplay = document.querySelector("#message-box");
 	var messageTimeout = setTimeout(function() {
-		messageDisplay.textContent = "USE ARROW KEYS TO PLAY";
-	}, 8000);
+		messageDisplay.textContent = "SWIPE OR USE ARROW KEYS TO PLAY";
+	}, 4000);
 
 	// Restart button
 	var restartButton = document.querySelector("#restart");
@@ -431,11 +430,14 @@ window.onload = function() {
 	});
 
 	// Key events
+	// // // // //
 	addEventListener("keydown", function(event) {
 		if (keyCodes.hasOwnProperty(event.keyCode)) {
 			// Clear message box
-			clearTimeout(messageTimeout);
-			messageDisplay.textContent = "";
+			if (messageTimeout) {
+				clearTimeout(messageTimeout);
+				messageDisplay.textContent = "";
+			}
 
 			// Make the move
 			myGame.move(keyCodes[event.keyCode]);
@@ -443,4 +445,70 @@ window.onload = function() {
 		}
 	});
 
+	// Touch events
+	// // // // // //
+	var board = document.querySelector("#board"),
+		startX = null,
+		startY = null,
+		direction = null;
+
+	board.addEventListener("touchstart", function(event) {
+		var toucheStart = event.touches;
+		if (toucheStart.length > 1)
+			return;
+
+		// Start position
+		startX = toucheStart[0].clientX;
+		startY = toucheStart[0].clientY;
+	}, false);
+
+	board.addEventListener("touchmove", function(event) {
+		event.preventDefault();
+	}, false);
+
+	board.addEventListener("touchend", function(event) {
+		if (!startX || !startY)
+			return;
+
+		var touchEnd = event.changedTouches;
+		if (touchEnd.length > 1)
+			return;
+
+		// End position
+		var endX = touchEnd[0].clientX,
+			endY = touchEnd[0].clientY;
+
+		// Distance moved
+		var diffX = endX - startX,
+			diffY = endY - startY;
+
+		// Test direction to slide
+		if (Math.abs(diffX) > Math.abs(diffY)) {
+			if (diffX > 0)
+				direction = "right";
+			else if (diffX < 0)
+				direction = "left";
+		} else {
+			if (diffY > 0)
+				direction = "down";
+			else if (diffY < 0)
+				direction = "up";
+		}
+
+		// Move in specific direction
+		if (direction) {
+			// Clear message box
+			if (messageTimeout) {
+				clearTimeout(messageTimeout);
+				messageDisplay.textContent = "";
+			}
+
+			myGame.move(direction);
+		}
+
+		// Reset
+		startX = null;
+		startY = null;
+		direction = null;
+	}, false);
 };
